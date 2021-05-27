@@ -19,10 +19,13 @@
   <!-- Content -->
   <div class="post-content">
     <div class="post-summary">
-      {{ .Summary }}
+    {{ .Summary }}
     </div>
+    {{ if .Truncated }}
+      <!-- This <div> includes a read more link, but only if the summary is truncated... -->
     <div class="read-more">
       <a href="{{ .RelPermalink }}" class="read-more-link">{{ T "readMore" }}</a>
     </div>
+     {{ end }}
   </div>
 </article>
